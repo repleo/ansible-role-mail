@@ -1,4 +1,4 @@
-Ansible role - Full mail server installation inc webmail, ssl and spam filterr
+Ansible role - Full mail server installation including webmail, ssl and spam filter
 =====
 
 [![Build Status](https://travis-ci.org/repleo/ansible-role-mail.svg?branch=master)](https://travis-ci.org/repleo/ansible-role-mail)
