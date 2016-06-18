@@ -1,4 +1,4 @@
-Ansible role - rainloop webmail client installer
+Ansible role - Full mail server installation inc webmail, ssl and spam filterr
 =====
 
 [![Build Status](https://travis-ci.org/repleo/ansible-role-mail.svg?branch=master)](https://travis-ci.org/repleo/ansible-role-mail)
