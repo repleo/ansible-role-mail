@@ -1,0 +1,43 @@
+---
+galaxy_info:
+  author: Jeroen Arnoldus
+  description: Ansible role for installing complete mail server 
+  company: Repleo, Amstelveen, Holland
+  license: GPLv3
+  min_ansible_version: 2.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+  galaxy_tags:
+    - smtp
+    - imap
+    - webmail
+    - mail
+    - server
+dependencies:
+     - { role: repleo.courier-imap,
+         courier_ssl: "{{ mail_ssl }}",
+         courier_ssl_certificate: "{{ mail_ssl_imap_certificate }}",
+         courier_ssl_certificate_key: "{{ mail_ssl_imap_certificate_key }}"
+       }
+     - { role: repleo.postfix,
+         postfix_mydestination: "{{ mail_destinations }}",
+         postfix_mynetworks: "{{ mail_networks }}",
+         postfix_inet_interfaces: all,
+         postfix_use_maildrop: yes,
+         postfix_smtpd_use_tls: "{{ mail_ssl }}",
+         postfix_tls_key_file: "{{ mail_ssl_smtp_certificate_key }}",
+         postfix_tls_cert_file: "{{ mail_ssl_smtp_certificate }}",
+         postfix_smtpd_auth_sasl_enable: "{{ mail_ssl }}",
+         postfix_send_test_mail_to: "{{ mail_test_mail }}"
+       }
+     - { role: repleo.rainloop,
+         rainloop_hostname: "{{ mail_webmail_hostname }}",
+         rainloop_ssl: "{{ mail_ssl }}",
+         rainloop_ssl_certificate: "{{ mail_ssl_webmail_certificate }}",
+         rainloop_ssl_certificate_key: "{{ mail_ssl_webmail_certificate_key }}"
+       }

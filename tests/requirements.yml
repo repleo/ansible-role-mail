@@ -1,0 +1,10 @@
+
+- src: repleo.courier-imap
+  version: v0.1.0
+
+- src: repleo.postfix
+  version: v4.0.0
+
+- src: repleo.rainloop
+  version: v0.1.2
+
