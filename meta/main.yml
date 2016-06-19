@@ -40,8 +40,8 @@ dependencies:
          rainloop_ssl: "{{ mail_ssl }}",
          rainloop_ssl_certificate: "{{ mail_ssl_webmail_certificate }}",
          rainloop_ssl_certificate_key: "{{ mail_ssl_webmail_certificate_key }}",
-         rainloop_db_user: "{{ mail_db_user: rainloop }}",
-         rainloop_db_password: "{{ mail_db_password: rainloop }}",
-         rainloop_db_host: "{{ mail_db_host: localhost }}",
-         rainloop_db_name: "{{ mail_db_name: rainloopdb }}"
+         rainloop_db_user: "{{ mail_db_user }}",
+         rainloop_db_password: "{{ mail_db_password }}",
+         rainloop_db_host: "{{ mail_db_host }}",
+         rainloop_db_name: "{{ mail_db_name }}"
        }
