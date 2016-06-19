@@ -1,0 +1,8 @@
+---
+# defaults file for ansible-role-mail/
+
+# Database config.
+mail_db_user: rainloop
+mail_db_password: rainloop
+mail_db_host: localhost
+mail_db_name: rainloopdb

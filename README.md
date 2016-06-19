@@ -24,21 +24,24 @@ This role requires Ansible 2.0 or higher and platform requirements are listed in
 Role Variables
 --------------
 
-   # General config.
-   rainloop_hostname: mail.example.com
 
-   # SSL Configuration.
-   rainloop_ssl: no
-   rainloop_redirect_http_to_https: yes
-   rainloop_ssl_certificate: "/etc/nginx/ssl/rainloop.crt"
-   rainloop_ssl_certificate_key: "/etc/nginx/ssl/rainloop.key"
-
-   # Database config.
-   rainloop_db_user: rainloop
-   rainloop_db_password: rainloop
-   rainloop_db_host: localhost
-   rainloop_db_name: rainloopdb
-
+```yaml
+    mail_ssl: yes,
+    mail_ssl_imap_certificate: /etc/courier/imap.repleo.nl-chain.pem,
+    mail_ssl_imap_certificate_key: /etc/courier/imap.repleo.nl.key,
+    mail_destinations: "repleo.nl, $mydomain, $myhostname, localhost.$mydomain, localhost",
+    mail_networks: "127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128",
+    mail_test_mail: jeroen@repleo;nl,
+    mail_ssl_smtp_certificate_key: /etc/postfix/tls/smtp.repleo.nl.key,
+    mail_ssl_smtp_certificate: /etc/postfix/tls/smtp.repleo.nl_chain.pem,
+    mail_webmail_hostname: berichten.repleo.nl,
+    mail_ssl_webmail_certificate: /etc/nginx/ssl/berichten.repleo.nl-chain.pem,
+    mail_ssl_webmail_certificate_key: /etc/nginx/ssl/berichten.repleo.nl.key
+    mail_db_user: rainloop
+    mail_db_password: rainloop
+    mail_db_host: localhost
+    mail_db_name: rainloopdb
+```
 
 Dependencies
 ------------
@@ -47,10 +50,13 @@ Dependencies
 - repleo.postfix
 - repleo.courier-imap
 
+Make sure you install all keys on the server prior to execute this role
+
 Example Playbook
 ----------------
 
-Install rainloop
+Install mail server
+
 ```yaml
 - { role: repleo.mail,
     mail_ssl: yes,
