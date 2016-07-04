@@ -27,6 +27,7 @@ dependencies:
      - { role: repleo.postfix,
          postfix_mydestination: "{{ mail_destinations }}",
          postfix_mynetworks: "{{ mail_networks }}",
+         postfix_myhostname: "{{ mail_hostname }}",
          postfix_inet_interfaces: all,
          postfix_use_maildrop: yes,
          postfix_smtpd_use_tls: "{{ mail_ssl }}",
