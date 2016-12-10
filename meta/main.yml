@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Jeroen Arnoldus
-  description: Ansible role for installing complete mail server 
+  description: Ansible role for installing complete mail server
   company: Repleo, Amstelveen, Holland
   license: GPLv3
   min_ansible_version: 2.0
@@ -30,6 +30,12 @@ dependencies:
          postfix_myhostname: "{{ mail_hostname }}",
          postfix_inet_interfaces: all,
          postfix_use_maildrop: yes,
+         postfix_dkim: "{{ mail_dkim }}",
+         postfix_dkim_domains: "{{ mail_dkim_domains }}",
+         postfix_dmarc: "{{ mail_dmarc }}",
+         postfix_dmarc_host: "{{ mail_dmarc_host }}",
+         postfix_dmarc_domains: "{{ mail_dmarc_domains }}",
+         postfix_spf: "{{ mail_spf }}",
          postfix_smtpd_use_tls: "{{ mail_ssl }}",
          postfix_tls_key_file: "{{ mail_ssl_smtp_certificate_key }}",
          postfix_tls_cert_file: "{{ mail_ssl_smtp_certificate }}",
