@@ -41,6 +41,8 @@ Role Variables
     mail_db_password: rainloop
     mail_db_host: localhost
     mail_db_name: rainloopdb
+    mail_mailbox_size: 0
+    mail_message_size: 50240000
 ```
 
 Dependencies
@@ -69,7 +71,9 @@ Install mail server
     mail_ssl_smtp_certificate: /etc/postfix/tls/smtp.repleo.nl_chain.pem,
     mail_webmail_hostname: berichten.repleo.nl,
     mail_ssl_webmail_certificate: /etc/nginx/ssl/berichten.repleo.nl-chain.pem,
-    mail_ssl_webmail_certificate_key: /etc/nginx/ssl/berichten.repleo.nl.key
+    mail_ssl_webmail_certificate_key: /etc/nginx/ssl/berichten.repleo.nl.key,
+    mail_mailbox_size: 0,
+    mail_message_size: 50240000
   }
 
 ```

@@ -1,6 +1,10 @@
 # Change Log
 The Repleo Mail server ansible installation change history
 
+## [0.1.5] - Release 2017-06-05
+* Added mailbox_size parameter
+* Added message_size parameter
+
 ## [0.1.4] - Release 2016-12-10
 
 * Fixed sending mail with TLS support
