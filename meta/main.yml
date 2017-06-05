@@ -41,7 +41,8 @@ dependencies:
          postfix_tls_cert_file: "{{ mail_ssl_smtp_certificate }}",
          postfix_smtpd_auth_sasl_enable: "{{ mail_ssl }}",
          postfix_send_test_mail_to: "{{ mail_test_mail }}",
-         postfix_mailbox_size: "{{ mail_mailbox_size }}"
+         postfix_mailbox_size: "{{ mail_mailbox_size }}",
+         postfix_message_size: "{{ mail_message_size }}"
        }
      - { role: repleo.rainloop,
          rainloop_hostname: "{{ mail_webmail_hostname }}",
